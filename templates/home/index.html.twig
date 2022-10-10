@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de nos articles
+{% endblock %}
+
+{% block body %}
+	<main>
+		<section>
+			<div>
+				<h1>Liste des articles</h1>
+			</div>
+			{% for article in articles %}
+				<div class="col-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">{{ article.title }}</h5>
+							<div>
+								<p>{{ article.excerpt }}</p>
+							</div>
+							<a href="{{ path('app_show')}}" class="btn btn-primary">Lire l'article</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+	{% endfor %}
+{% endblock %}
